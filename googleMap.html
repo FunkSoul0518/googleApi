@@ -215,7 +215,8 @@
                     //列表選定後模擬點擊Marker
                     radio.addEventListener('change', function(){
                         let radioMarker = markers[this.id];
-                        let content = "<h3>"+place.name+"</h3> <div><p>評分："+place.rating+"</p><p>地址："+place.vicinity+"</p></div>";
+                        let rat = place.rating === undefined? "無" : place.rating;
+                        let content = "<h3>"+place.name+"</h3> <div><p>評分："+rat+"</p><p>地址："+place.vicinity+"</p></div>";
                         infowindow.setContent(content);
                         infowindow.open(map, radioMarker);
                         placeMarkerAndPanTo(place.geometry.location, map);
