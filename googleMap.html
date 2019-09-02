@@ -127,12 +127,12 @@
 				queryPlace(request, map);
                 
                 //nearbySearch
-				function queryPlace(request, map){
+		function queryPlace(request, map){
                     let ratingSort = document.querySelector('#ratingSort');
                     sortVal = ratingSort.value;
-					service = new google.maps.places.PlacesService(map);
-					service.nearbySearch(request, searchCallback);
-				}
+		    service = new google.maps.places.PlacesService(map);
+		    service.nearbySearch(request, searchCallback);
+		}
 				
                 //callBack函式
                 function searchCallback(places){
