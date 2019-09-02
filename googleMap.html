@@ -213,9 +213,9 @@
                     radio.name = "itemRadio";
                     
                     //列表選定後模擬點擊Marker
+                    let rat = place.rating === undefined? "無" : place.rating;
                     radio.addEventListener('change', function(){
                         let radioMarker = markers[this.id];
-                        let rat = place.rating === undefined? "無" : place.rating;
                         let content = "<h3>"+place.name+"</h3> <div><p>評分："+rat+"</p><p>地址："+place.vicinity+"</p></div>";
                         infowindow.setContent(content);
                         infowindow.open(map, radioMarker);
@@ -223,7 +223,7 @@
                     });
                     
                     titleP.innerHTML = place.name;
-                    rating.innerHTML = "評分："+place.rating;
+                    rating.innerHTML = "評分："+rat;
                     address.innerHTML = "地址："+place.vicinity;
                     
                     itemDiv.appendChild(titleP);
